@@ -1,0 +1,165 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: remove_acne
+  examples: |
+    - remove my acne
+    - remove my pimples
+    - delete acne
+    - delete my acne
+    - delete pimples
+    - delete my pimples
+    - make my skin smooth
+    - smooth the skin
+    - smooth my skin
+
+- intent: remove_glasses
+  examples: |
+    - remove my glasses
+    - remove the glasses
+    - delete the glasses
+    - delete my glasses
+
+- intent: remove_beard
+  examples: |
+    - remove my beard
+    - remove the beard
+    - delete the beard
+    - delete beard
+    - remove beard
+
+- intent: change_hair_color
+  examples: |
+    - change my hair color to red
+    - make my hair red
+    - make me a redhead
+    - make me redhead
+    - change my hair color to yellow
+    - make my hair yellow
+    - make me a blonde
+    - make me blonde
+    - change my hair color to brown
+    - make my hair brown
+    - make me a brunette
+    - make me brunette
+    - change my hair color to blue
+    - make my hair blue
+    - make me a bluehead
+    - make me bluehead
+    - change my hair color to green
+    - make my hair green
+    - make me a greenhead
+    - make me greenhead
+    - change my hair color to purple
+    - make my hair purple
+    - make me a purplehead
+    - make me purplehead
+    - change my hair color to black
+    - make my hair black
+    - make me a blackhead
+    - make me blackhead
+    - change my hair color to pink
+    - make my hair pink
+    - make me a pinkhead
+    - make me pinkhead
+    - change my hair color to orange
+    - make my hair orange
+    - make me a orangehead
+    - make me orangehead
+    - change my hair color to white
+    - make my hair white
+    - make me a whitehead
+    - make me whitehead
+    - change my hair color to gray
+    - make my hair gray
+    - make me a grayhead
+    - make me grayhead

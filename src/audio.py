@@ -3,9 +3,13 @@ import os
 from gtts import gTTS
 from rasa.core.agent import Agent
 import asyncio
-
+import tensorflow as tf
 
 # Getting the action that the user wants to apply
+def get_model(model_directory):
+    agent = Agent.load(model_path=model_directory)
+    return agent
+
 def get_action(model_directory):
 
     r = sr.Recognizer()
@@ -17,13 +21,15 @@ def get_action(model_directory):
 
     try:
         intended_action = r.recognize_google(audio)
-        audio = gTTS(text='You said'+intended_action, lang='en')
-        audio.save("voices/message.mp3")
-        os.system('afplay "voices/message.mp3"')
+        #audio = gTTS(text='You said'+intended_action, lang='en')
+        #audio.save("voices/message.mp3")
+        #os.system('afplay "voices/message.mp3"')
 
-        agent = Agent.load(model_path=model_directory)
-        result = asyncio.run(agent.parse_message(message_data=intended_action))
-        return result['intent']['name']
+        #agent = Agent.load(model_path=model_directory)
+        #result = asyncio.run(agent.parse_message(message_data=intended_action))
+        #tf.compat.v1.reset_default_graph()
+        #return result['intent']['name'], intended_action
+        return intended_action
 
     except sr.UnknownValueError:
         audio = gTTS(text='I could not understand what you said', lang='en')

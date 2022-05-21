@@ -26,4 +26,5 @@ To run the project:
 3. Please unzip the Checkpoints&Summaries.zip file (Drive link: https://drive.google.com/drive/folders/1Vljq4FhbaI1Gorr149xX-mj0Xc-kKahL?usp=sharing ) and place the checkpoints and summaries files under the output/AttGAN_128_CelebA-HQ separately.
 4. Run the main.py file
 
-Note: For all images in CelebA-HQ, refer this link: https://github.com/switchablenorms/CelebAMask-HQ
+Note1: For all images in CelebA-HQ, refer this link: https://github.com/switchablenorms/CelebAMask-HQ
+Note2: If you want to download all of the dataset, I followed the steps in this repository for the dataset: https://github.com/LynnHo/AttGAN-Tensorflow

@@ -1,4 +1,4 @@
-# IRA COMP537 PROJECT
+# COMP537 PROJECT
 IRA: Image Retouching with Audio
 
 IRA presents a voice-based, personalized user interface to enable the retouching process as the smoothest.

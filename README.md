@@ -28,6 +28,7 @@ To run the project:
 
 - Note1: For all images in CelebA-HQ, refer this link: https://github.com/switchablenorms/CelebAMask-HQ
 - Note2: If you want to download all of the dataset, I followed the steps in this repository for data & used the pre-given model weights: https://github.com/LynnHo/AttGAN-Tensorflow
+- Note3: tflib, imblib, and other files under the src/src_AttGAN directory are taken from the authors of the AttGAN https://github.com/LynnHo/AttGAN-Tensorflow
 
 References:
 

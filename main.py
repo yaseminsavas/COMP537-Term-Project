@@ -34,7 +34,7 @@ if __name__ == '__main__':
                 while not image_uploaded:
 
                     image = Image.open(filename)
-                    image.thumbnail((128, 128))
+                    image.thumbnail((256, 256))
                     bio = io.BytesIO()
                     image.save(bio, format="PNG")
                     window["-IMAGE-"].update(data=bio.getvalue(),visible=True)
@@ -119,7 +119,7 @@ if __name__ == '__main__':
                 while event != "Exit" or event != sg.WIN_CLOSED:
 
                     intent_model_directory = training_intent_classification()
-                    intended_action = get_action(model_directory=intent_model_directory)
+                    intended_action, true_sentence = get_action(model_directory=intent_model_directory)
                     further_intended_action = intended_action # to initialize
                     print("Your intended_action is:", intended_action)
                     window['ButtonKey2'].click()
@@ -136,9 +136,7 @@ if __name__ == '__main__':
                     filename = 'output/AttGAN_128_CelebA-HQ/temp_images/tmp.jpg'
                     apply_action_voice(further_intended_action, file_path=filename, original=original_path)
 
-                split = intended_action.split(" ")
-
-                #This part is ok for 13 features, but an NLU model is necessary to make it more generic.
+                split = true_sentence.split(" ")
 
                 for i in split:
                     if i == 'black' or i == 'dark':
@@ -180,7 +178,7 @@ if __name__ == '__main__':
 
                     #bio = io.BytesIO()
                     #result_fin_v2.save(bio, format="PNG")
-                    result_fin_v2.thumbnail((128, 128))
+                    result_fin_v2.thumbnail((256, 256))
                     bio = io.BytesIO()
                     result_fin_v2.save(bio, format="PNG")
                     window["-IMAGE-"].update(data=bio.getvalue(),visible=True)
@@ -191,7 +189,7 @@ if __name__ == '__main__':
                 except:
                     bio = io.BytesIO()
                     result.save(bio, format="PNG")
-                    result.thumbnail((128, 128))
+                    result.thumbnail((256, 256))
                     window["-IMAGE-"].update(data=bio.getvalue(), visible=True)
 
                     filename = 'output/AttGAN_128_CelebA-HQ/temp_images/tmp.jpg'
@@ -207,7 +205,7 @@ if __name__ == '__main__':
 
                 if event2 == 'Save':
                     filename = 'output/AttGAN_128_CelebA-HQ/temp_images/final_image_IRA.jpg'
-                    result_fin.resize((128, 128))
+                    result_fin.resize((256, 256))
                     with open(filename, 'w') as f:
                         result_fin_v2.save(f)
 
@@ -217,7 +215,7 @@ if __name__ == '__main__':
 
                 elif event2 == 'Clear':
                     image = Image.open(original_filename)
-                    image.thumbnail((128, 128))
+                    image.thumbnail((256, 256))
                     bio = io.BytesIO()
                     image.save(bio, format="PNG")
                     window["-IMAGE-"].update(data=bio.getvalue(), visible=True)

@@ -118,8 +118,7 @@ if __name__ == '__main__':
                 intended_action = " "
                 while event != "Exit" or event != sg.WIN_CLOSED:
 
-                    intent_model_directory = training_intent_classification()
-                    intended_action, true_sentence = get_action(model_directory=intent_model_directory)
+                    intended_action, true_sentence = get_action()
                     further_intended_action = intended_action # to initialize
                     print("Your intended_action is:", intended_action)
                     window['ButtonKey2'].click()
@@ -176,8 +175,6 @@ if __name__ == '__main__':
                     with open(filename, 'w') as f:
                         result_fin_v2.save(f)
 
-                    #bio = io.BytesIO()
-                    #result_fin_v2.save(bio, format="PNG")
                     result_fin_v2.thumbnail((256, 256))
                     bio = io.BytesIO()
                     result_fin_v2.save(bio, format="PNG")
@@ -221,7 +218,7 @@ if __name__ == '__main__':
                     window["-IMAGE-"].update(data=bio.getvalue(), visible=True)
                     window.refresh()
 
-                    intended_action = get_action(model_directory=intent_model_directory)
+                    intended_action = get_action()
                     further_intended_action = 'change_hair_color'
 
                     window['ButtonKey2'].click()
@@ -234,7 +231,7 @@ if __name__ == '__main__':
                     break
 
                 elif event2 == 'Go on':
-                    intended_action = get_action(model_directory=intent_model_directory)
+                    intended_action = get_action()
                     window['ButtonKey2'].click()
                     event, values = window.read()
                     window.refresh()

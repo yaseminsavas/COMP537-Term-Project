@@ -1,5 +1,5 @@
 import numpy as np
-import pylib as py
+import src.src_AttGAN.pylib as py
 import tensorflow as tf
 import tflib as tl
 import tflib.utils

@@ -7,12 +7,12 @@ import yaml
 import src
 tf.get_logger().setLevel('ERROR')
 
-
 """
 These modules are from the original repository
 Github Reference: https://github.com/LynnHo/AttGAN-Tensorflow
 Paper Reference: https://ieeexplore.ieee.org/abstract/document/8718508
 """
+
 import tflib as tl
 import imlib as im
 import src.src_AttGAN.data as data
@@ -121,26 +121,6 @@ def apply_action_voice(intended_action, file_path,original):
         However, the end results are kinda creepy...
         """
 
-        """
-        image = tf.compat.v1.io.read_file(img_dir)
-        image = tf.compat.v1.image.decode_png(image, 3)
-        image_v2 = image[np.newaxis]
-        image_v2 = tf.compat.v1.image.resize(image_v2, [args["load_size"], args["load_size"]])
-        image_v2 = tl.center_crop(image_v2, size=args["crop_size"])
-        fin_image = tf.compat.v1.clip_by_value(image_v2, 0, 255) / 127.5 - 1
-
-        Genc, Gdec, _ = src.src_AttGAN.module.get_model(args["model"], n_atts, weight_decay=args["weight_decay"])
-        xa = tf.compat.v1.placeholder(tf.float32, shape=[None, args["crop_size"], args["crop_size"], 3])
-        
-        enc = Genc(xa, training=False)
-        f1 = sess.run([fin_image])
-        label = sess.run(enc, feed_dict={xa: f1})
-        
-        label_v2 = tf.constant(label)
-        label_v2 = (label_v2 + 1) // 2
-        labels = label_v2[np.newaxis]
-        """
-
         label = " -1 -1 1 -1 -1 -1 1 1 -1 -1 -1 1 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 -1 -1 1 1 -1 -1 -1 1 -1 1 1 -1 -1 -1 -1 -1 -1 1 "
         a = label[2:-1].split(" ")
         a_fin = []
@@ -222,7 +202,7 @@ def apply_action_voice(intended_action, file_path,original):
 
         return run
 
-    """sample = sample_graph()
+    sample = sample_graph()
     
     # checkpoint
     if not os.path.exists(py.join(output_dir, 'generator.pb')):
@@ -232,6 +212,6 @@ def apply_action_voice(intended_action, file_path,original):
             max_to_keep=1
         )
         checkpoint.restore().run_restore_ops()
-    
-    sample()"""
+
+    sample()
     sess.close()

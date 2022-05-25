@@ -222,8 +222,8 @@ def apply_action_voice(intended_action, file_path,original):
 
         return run
 
-    sample = sample_graph()
-
+    """sample = sample_graph()
+    
     # checkpoint
     if not os.path.exists(py.join(output_dir, 'generator.pb')):
         checkpoint = tl.Checkpoint(
@@ -232,6 +232,6 @@ def apply_action_voice(intended_action, file_path,original):
             max_to_keep=1
         )
         checkpoint.restore().run_restore_ops()
-
-    sample()
+    
+    sample()"""
     sess.close()

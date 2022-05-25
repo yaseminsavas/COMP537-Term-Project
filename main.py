@@ -118,7 +118,7 @@ if __name__ == '__main__':
                 intended_action = " "
                 while event != "Exit" or event != sg.WIN_CLOSED:
 
-                    intended_action, true_sentence = get_action()
+                    intended_action = get_action()
                     further_intended_action = intended_action # to initialize
                     print("Your intended_action is:", intended_action)
                     window['ButtonKey2'].click()
@@ -135,7 +135,7 @@ if __name__ == '__main__':
                     filename = 'output/AttGAN_128_CelebA-HQ/temp_images/tmp.jpg'
                     apply_action_voice(further_intended_action, file_path=filename, original=original_path)
 
-                split = true_sentence.split(" ")
+                split = intended_action.split(" ")
 
                 for i in split:
                     if i == 'black' or i == 'dark':

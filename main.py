@@ -119,8 +119,8 @@ if __name__ == '__main__':
                 while event != "Exit" or event != sg.WIN_CLOSED:
 
                     intended_action = get_action()
+                    intended_action ="bangs"
                     further_intended_action = intended_action # to initialize
-                    print("Your intended_action is:", intended_action)
                     window['ButtonKey2'].click()
                     event, values = window.read()
                     window.refresh()
@@ -133,7 +133,7 @@ if __name__ == '__main__':
                     apply_action_voice(intended_action, file_path=filename, original=original_path)
                 else: # further steps
                     filename = 'output/AttGAN_128_CelebA-HQ/temp_images/tmp.jpg'
-                    apply_action_voice(further_intended_action, file_path=filename, original=original_path)
+                    apply_action_voice(intended_action, file_path=filename, original=original_path)
 
                 split = intended_action.split(" ")
 
@@ -219,6 +219,7 @@ if __name__ == '__main__':
                     window.refresh()
 
                     intended_action = get_action()
+                    intended_action = "sun glasses"
                     further_intended_action = 'change_hair_color'
 
                     window['ButtonKey2'].click()
@@ -232,6 +233,7 @@ if __name__ == '__main__':
 
                 elif event2 == 'Go on':
                     intended_action = get_action()
+                    intended_action = "yellow hair"
                     window['ButtonKey2'].click()
                     event, values = window.read()
                     window.refresh()

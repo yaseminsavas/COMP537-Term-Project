@@ -119,7 +119,6 @@ if __name__ == '__main__':
                 while event != "Exit" or event != sg.WIN_CLOSED:
 
                     intended_action = get_action()
-                    intended_action ="bangs"
                     further_intended_action = intended_action # to initialize
                     window['ButtonKey2'].click()
                     event, values = window.read()
@@ -219,8 +218,8 @@ if __name__ == '__main__':
                     window.refresh()
 
                     intended_action = get_action()
-                    intended_action = "sun glasses"
-                    further_intended_action = 'change_hair_color'
+                    further_intended_action = intended_action
+                    #further_intended_action = 'change_hair_color'
 
                     window['ButtonKey2'].click()
                     event, values = window.read()
@@ -233,7 +232,6 @@ if __name__ == '__main__':
 
                 elif event2 == 'Go on':
                     intended_action = get_action()
-                    intended_action = "yellow hair"
                     window['ButtonKey2'].click()
                     event, values = window.read()
                     window.refresh()
